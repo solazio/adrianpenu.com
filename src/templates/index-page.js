@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import Table from '../components/Table'
 
 export const IndexPageTemplate = ({
   image,
@@ -16,6 +17,9 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
+    <div className="u-fixed-width">
+      <Table />
+    </div>
     <div
       className="full-width-image margin-top-0"
       style={{
