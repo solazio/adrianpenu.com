@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: solazio/adrianpenu.com
   branch: master
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
@@ -12,6 +13,19 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "categories"
+    label: "Categories"
+    folder: "src/pages/categories"
+    create: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "category"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - name: "images"
+        label: "Images"
+        widget: "list"
+        field: {label: "Image", name: "image", widget: image}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
