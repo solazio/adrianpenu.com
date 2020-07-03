@@ -62,7 +62,7 @@ collections:
                       name: "description",
                       widget: "text",
                     }
-                  - { label: "image", name: "image", widget: "image" }
+                  - { label: "Image", name: "image", widget: "image" }
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
@@ -77,15 +77,13 @@ collections:
           - { label: "Subtitle", name: "subtitle", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Description", name: "description", widget: "string" }
-          - {
-              label: "Expos",
-              name: "expos",
-              widget: "list",
-              fields:
-                - { name: "name", label: "Name", widget: "string" }
-                - { name: "date", label: "Date", widget: "string" }
-                - { name: "location", label: "Location", widget: "string" }
-            }
+          - label: "Expos",
+            name: "expos",
+            widget: "list",
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
