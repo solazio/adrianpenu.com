@@ -1,63 +1,114 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
-
+export const AboutPageTemplate = ({
+  title,
+  subtitle,
+  image,
+  description,
+  expos,
+}) => {
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
+    <>
+      <section className='p-strip'>
+        <div className='u-fixed-width'>
+          <h1 className='p-heading--3'>{title}</h1>
+        </div>
+        <div className='row'>
+          <div className='col-6'>
+            <p>{description}</p>
+          </div>
+          <div className='col-6'>
+            <PreviewCompatibleImage
+              imageInfo={image}
+            />
           </div>
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
+
+      <section className='p-strip'>
+        <div className='u-fixed-width'>
+          <h2 className='p-heading--4'>{subtitle}</h2>
+        </div>
+        <div className='row'>
+          {expos.map((el) => (
+            <div className='col-3 col-medium-3 col-small-4'>
+              <div className='p-card--expo'>
+                <div className='p-card__date'>
+                  <i class='p-icon--calendar'></i>
+                  <span>{el.date}</span>
+                </div>
+                <p className='p-card__content'>{el.name}</p>
+                <div className='p-card__location'>
+                  <i class='p-icon--location'></i>
+                  <span>{el.location}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-}
+  subtitle: PropTypes.string.isRequired,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  description: PropTypes.string.isRequired,
+  expos: PropTypes.array.isRequired,
+};
 
 const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
       <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+        title={frontmatter.title}
+        subtitle={frontmatter.subtitle}
+        expos={frontmatter.expos}
+        image={frontmatter.image}
+        description={frontmatter.description}
       />
     </Layout>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
-}
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }).isRequired,
+};
 
-export default AboutPage
+export default AboutPage;
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+  query AboutPageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-page" } }) {
       frontmatter {
         title
+        subtitle
+        image {
+          childImageSharp {
+            fluid(maxWidth: 280, quality: 90) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        description
+        expos {
+          date
+          location
+          name
+        }
       }
     }
   }
-`
+`;

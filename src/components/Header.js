@@ -1,21 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import logo from '../img/logo.svg'
 
 const Header = ({ path }) => (
   <header id="navigation" className="p-navigation">
     <div className="p-navigation__row">
       <div className="p-navigation__banner">
         <div className="p-navigation__logo">
-          <Link to="/" className="p-navigation__item" title="Logo">
-            <img
-              src={logo}
-              alt="Kaldi"
-              className="p-navigation__image"
-              style={{ width: '88px' }}
-            />
-          </Link>
         </div>
         <a
           href="#navigation"
@@ -49,18 +40,18 @@ const Header = ({ path }) => (
               Home
             </Link>
           </li>
-          <li
+          {/* <li
             className={
-              path === '/blog'
+              path === '/projects'
                 ? 'p-navigation__item is-selected'
                 : 'p-navigation__item'
             }
             role="menuitem"
           >
-            <Link className="p-navigation__link" to="/blog">
+            <Link className="p-navigation__link" to="/projects">
               News
             </Link>
-          </li>
+          </li> */}
           <li
             className={
               path === '/about'
@@ -71,6 +62,18 @@ const Header = ({ path }) => (
           >
             <Link className="p-navigation__link" to="/about">
               About
+            </Link>
+          </li>
+          <li
+            className={
+              path === '/contact'
+                ? 'p-navigation__item is-selected'
+                : 'p-navigation__item'
+            }
+            role="menuitem"
+          >
+            <Link className="p-navigation__link" to="/contact">
+              Contact
             </Link>
           </li>
         </ul>

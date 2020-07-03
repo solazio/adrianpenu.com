@@ -1,62 +1,48 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import logo from "../img/logo.svg";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-const Category = ({ images }) => (
+const Category = ({ category }) => (
   <div className='col-4'>
-    <Link to='/' title='Category'>
+    <Link to={`/${category.slug}`}>
       <div className='p-card--category'>
-        <div className='p-card--category__title'>Fiction</div>
+        <div className='p-card--category__title'>{category.name}</div>
         <ul className='p-card--category__list'>
-          <li className='p-card--category__large'>
-            <img
-              src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/san-fransisco-768x432.jpg'
-              alt='Kaldi'
-              className='p-card--category__image'
-            />
-          </li>
-          <li className='p-card--category__small'>
-            <img
-              src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/san-fransisco-768x432.jpg'
-              alt='Kaldi'
-              className='p-card--category__image'
-            />
-          </li>
-          <li className='p-card--category__small'>
-            <img
-              src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/san-fransisco-768x432.jpg'
-              alt='Kaldi'
-              className='p-card--category__image'
-            />
-          </li>
-          <li className='p-card--category__small'>
-            <img
-              src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/san-fransisco-768x432.jpg'
-              alt='Kaldi'
-              className='p-card--category__image'
-            />
-          </li>
+          {category.images.map((el, i) => {
+            if (i === 0 && el.featured) {
+              return (
+                <li className='p-card--category__large' key={el.alt}>
+                  <PreviewCompatibleImage
+                    imageInfo={el.image}
+                    immageClass='p-card--category__image'
+                  />
+                </li>
+              );
+            } else if (i > 0 && i < 4 && el.featured) {
+              return (
+                <li className='p-card--category__small' key={el.alt}>
+                  <PreviewCompatibleImage
+                    imageInfo={el.image}
+                    immageClass='p-card--category__image'
+                  />
+                </li>
+              );
+            }
+            return null;
+          })}
         </ul>
       </div>
-      {/* {images.map((imageUrl) => (
-        <img
-          src={imageUrl}
-          alt='Kaldi'
-          className='p-navigation__image'
-          style={{ width: "88px" }}
-        />
-      ))} */}
     </Link>
   </div>
 );
 
 Category.propTypes = {
-  images: PropTypes.array,
+  images: PropTypes.object,
 };
 
 Category.defaultProps = {
-  images: [],
+  category: {},
 };
 
 export default Category;
