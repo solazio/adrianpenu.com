@@ -78,14 +78,14 @@ collections:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Description", name: "description", widget: "string" }
           - {
-              label: Expos,
-              name: expos,
-              widget: list,
+              label: "Expos",
+              name: "expos",
+              widget: "list",
               fields:
-                - { name: name, label: Name, widget: string }
-                - { name: date, label: Date, widget: string }
-                - { name: location, label: Location, widget: string }
-          }
+                - { name: "name", label: "Name", widget: "string" }
+                - { name: "date", label: "Date", widget: "string" }
+                - { name: "location", label: "Location", widget: "string" }
+            }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
