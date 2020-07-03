@@ -1,9 +1,8 @@
 @mixin card {
-  .p-card {
-    border: 1px solid #cdcdcd;
-    padding: calc(1rem - 1px);
-    margin-bottom: 1.5rem;
-    overflow: auto;
+  .p-card--form {
+    border: 1px solid darken($color-background, 10%);
+    background-color: lighten($color-background, 5%);
+    padding: 0.5rem 1rem;
   }
 
   .p-card--expo {

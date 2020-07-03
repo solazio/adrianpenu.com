@@ -21,9 +21,10 @@ export const AboutPageTemplate = ({
           <div className='col-6'>
             <p>{description}</p>
           </div>
-          <div className='col-6'>
+          <div className='col-6 u-align--center' style={{ display: "flex" }}>
             <PreviewCompatibleImage
               imageInfo={image}
+              imageStyle={{ width: "200px" }}
             />
           </div>
         </div>
@@ -34,16 +35,16 @@ export const AboutPageTemplate = ({
           <h2 className='p-heading--4'>{subtitle}</h2>
         </div>
         <div className='row'>
-          {expos.map((el) => (
-            <div className='col-3 col-medium-3 col-small-4'>
+          {expos.map((el, i) => (
+            <div className='col-3 col-medium-3 col-small-4' key={i}>
               <div className='p-card--expo'>
                 <div className='p-card__date'>
-                  <i class='p-icon--calendar'></i>
+                  <i className='p-icon--calendar'></i>
                   <span>{el.date}</span>
                 </div>
                 <p className='p-card__content'>{el.name}</p>
                 <div className='p-card__location'>
-                  <i class='p-icon--location'></i>
+                  <i className='p-icon--location'></i>
                   <span>{el.location}</span>
                 </div>
               </div>
@@ -97,7 +98,7 @@ export const aboutPageQuery = graphql`
         subtitle
         image {
           childImageSharp {
-            fluid(maxWidth: 280, quality: 90) {
+            fluid(maxWidth: 200, quality: 70) {
               ...GatsbyImageSharpFluid
             }
           }

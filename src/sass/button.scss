@@ -1,0 +1,78 @@
+@mixin button {
+  %button-base {
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 300;
+    justify-content: center;
+    line-height: map-get($line-heights, default-text);
+    margin: 0 0 $input-margin-bottom 0;
+    padding: calc(#{$spv-nudge} - 1px) $sph-inner;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+
+    &:active,
+    &:focus,
+    &:hover {
+      text-decoration: none;
+    }
+
+    &:disabled,
+    &.is-disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    @media only screen and (max-width: $breakpoint-x-small) {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: $breakpoint-x-small + 1) {
+      width: auto;
+
+      &:not(:last-of-type):not(:only-of-type) {
+        margin-right: $sph-outer;
+      }
+    }
+
+    &.is-dense {
+      margin-bottom: $spv-nudge-compensation;
+      padding-bottom: calc(#{$spv-nudge - $sp-unit * 0.5} - 1px);
+      padding-top: calc(#{$spv-nudge - $sp-unit * 0.5} - 1px);
+    }
+
+    // The following three rules address buttons nested in <p>'s;
+    p & {
+      margin-bottom: $spv-outer--small-scaleable - $spv-nudge;
+      margin-top: -#{$spv-nudge};
+    }
+
+    p + p > & {
+      margin-top: $spv-outer--small - $spv-nudge;
+    }
+
+    @media only screen and (max-width: $breakpoint-x-small) {
+      p & + & {
+        margin-top: $spv-outer--small + $spv-nudge-compensation;
+      }
+    }
+  }
+
+  .p-button--neutral {
+    @extend %button-base;
+
+    background-color: $color-light;
+    border-left: solid 0.25rem $color-secondary;
+    color: $color-secondary;
+    transition-duration: 0.165s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+    &:hover {
+      background-color: $color-secondary;
+      border-left: solid 0.25rem $color-secondary;
+      color: $color-light;
+    }
+  }
+}
