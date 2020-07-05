@@ -64,15 +64,14 @@
     @extend %button-base;
 
     background-color: $color-light;
-    border-left: solid 0.25rem $color-secondary;
-    color: $color-secondary;
+    border-left: solid 0.25rem $color-background;
+    color: $color-dark;
     transition-duration: 0.165s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 
     &:hover {
-      background-color: $color-secondary;
-      border-left: solid 0.25rem $color-secondary;
-      color: $color-light;
+      background-color: $color-background;
+      border-left: solid 0.25rem $color-background;
     }
   }
 }

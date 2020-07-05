@@ -50,6 +50,9 @@ export default class Index extends React.Component {
                   onSubmit={this.handleSubmit}>
                   <p class='required-legend u-align-text--right'>Required</p>
                   {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                  <label className='u-hide' htmlFor={"form-name"}>
+                    Not real
+                  </label>
                   <input type='hidden' name='form-name' value='contact' />
                   <div hidden>
                     <label>
@@ -101,6 +104,7 @@ export default class Index extends React.Component {
                     id={"message"}
                     required={true}
                     placeholder={"Your message..."}
+                    style={{ resize: "vertical" }}
                   />
                   <button className='p-button--neutral' type='submit'>
                     Send

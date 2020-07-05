@@ -85,9 +85,30 @@ html {
   }
 }
 
-label.is-required::after {
-  color: #c7162b;
-  content: "*";
-  left: 0.25rem;
-  position: relative;
+label {
+  font-weight: 500;
+
+  &.is-required::after {
+    color: #c7162b;
+    content: "*";
+    left: 0.25rem;
+    position: relative;
+  }
+}
+
+textarea,
+[type="text"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"],
+[type="number"],
+[type="search"],
+[type="password"],
+[type="email"],
+[type="url"],
+[type="tel"] {
+  background-color: $color-light;
 }
