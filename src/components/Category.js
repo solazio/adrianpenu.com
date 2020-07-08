@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const Category = ({ category }) => (
-  <div className='col-4'>
+  <div className='col-4 col-medium-3'>
     <Link to={`/${category.slug}`}>
       <div className='p-card--category'>
         <div className='p-card--category__title'>{category.name}</div>
@@ -16,6 +16,7 @@ const Category = ({ category }) => (
                   <PreviewCompatibleImage
                     imageInfo={el.image}
                     immageClass='p-card--category__image'
+                    alt={el.alt}
                   />
                 </li>
               );
@@ -25,6 +26,7 @@ const Category = ({ category }) => (
                   <PreviewCompatibleImage
                     imageInfo={el.image}
                     immageClass='p-card--category__image'
+                    alt={el.alt}
                   />
                 </li>
               );

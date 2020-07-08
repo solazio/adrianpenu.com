@@ -13,8 +13,8 @@
       height: 2px;
       background-color: $color-secondary;
       content: "";
-      opacity: 0.5;
-      transform: scaleX(0.9);
+      opacity: 0.25;
+      transform: scaleX(0.8);
       transition-property: transform, opacity;
       transition-duration: 0.3s;
     }

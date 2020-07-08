@@ -1,9 +1,11 @@
 @mixin footer {
   .p-footer {
-    background-color: $color-primary;
-    color: $color-light;
     font-size: small;
-    padding: $spv-outer--regular-scaleable 0;
+    padding: 2rem 0 4rem 0;
+
+    @media screen and(max-width: $breakpoint-medium) {
+        padding-block-end: 2rem;
+      }
 
     .p-footer--left {
       justify-content: flex-start;
@@ -16,7 +18,7 @@
 
       @media screen and(max-width: $breakpoint-medium) {
         justify-content: flex-start;
-        padding-bottom: $spv-inner--small;
+        padding-bottom: 1.5rem;
         text-align: left;
       }
     }

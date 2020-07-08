@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { globalHistory } from '@reach/router'
-// import Footer from '../components/Footer'
+import Footer from '../components/Footer'
 import Header from '../components/Header'
 import '../sass/styles.scss'
 import useSiteMetadata from './SiteMetadata'
@@ -51,7 +51,7 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Header path={globalHistory.location.pathname} />
       <div>{children}</div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
