@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Adrian Penu - Art Studio',
     description:
-      'Beautiful paintings by Adrian Penu',
+      'Art by Adrian Penu',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

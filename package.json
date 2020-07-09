@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
-  "description": "Example Gatsby, and Netlify CMS project",
-  "version": "1.1.3",
-  "author": "Ovidiu Suciu",
+  "name": "adrianpenu.com",
+  "description": "This is the official codebase for adrianpenu.com website",
+  "version": "1.0.0",
+  "author": "Designza",
   "dependencies": {
     "gatsby": "^2.20.35",
     "gatsby-image": "^2.3.5",

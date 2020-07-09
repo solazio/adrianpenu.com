@@ -26,9 +26,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <IndexPageTemplate
-        categories={frontmatter.categories}
-      />
+      <IndexPageTemplate categories={frontmatter.categories} />
     </Layout>
   );
 };

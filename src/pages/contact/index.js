@@ -41,9 +41,6 @@ export default class Index extends React.Component {
             <div className='col-6 col-start-large-4'>
               <h1 className='p-heading--2'>Get in touch</h1>
               <div className='p-card--form'>
-                <h2 className='p-heading--4'>
-                  Send a message now
-                </h2>
                 <form
                   name='contact'
                   method='post'

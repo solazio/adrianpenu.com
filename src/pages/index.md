@@ -4,143 +4,17 @@ title: Add website name here
 description: >-
   Add website description here.
 categories:
-  - name: Fiction
-    slug: fiction
-    images:
-      - image: /img/fiction-adoration.jpg
-        title: Adoration
-        alt: adoration
-        featured: true
-        description: This is a very cool image
-      - image: /img/fiction-arrival-of-the-invader.jpg
-        title: Arrival of the Invader
-        alt: arrival-of-the-invader
-        featured: true
-        description: This is a very cool image
-      - image: /img/fiction-death-of-galatea.jpg
-        title: Death of Galatea
-        alt: death of galatea
-        featured: true
-        description: This is extra good
-      - image: /img/fiction-distance.jpg
-        title: Distance
-        alt: distance
-        featured: true
-        description: This is extra good
-      - image: /img/fiction-galatea-I.jpg
-        title: Galatea I
-        alt: galatea I
-        featured: false
-        description: This is extra good
-      - image: /img/fiction-galatea-II.jpg
-        title: Galatea II
-        alt: galatea II
-        featured: false
-        description: This is extra good
-      - image: /img/fiction-galatea-III.jpg
-        title: Galatea III
-        alt: galatea III
-        featured: false
-        description: This is extra good
-      - image: /img/fiction-galatea-IV.jpg
-        title: Galatea IV
-        alt: galatea IV
-        featured: false
-        description: This is extra good
-      - image: /img/fiction-omiscient.jpg
-        title: Omiscient
-        alt: omiscient
-        featured: false
-        description: This is extra good
-      - image: /img/fiction-paradoxx.jpg
-        title: Paradoxx
-        alt: paradoxx
-        featured: false
-        description: This is extra good
-  - name: Paperwork
-    slug: paperwork
-    images:
-      - image: /img/paperwork-deathrow-I.jpg
-        title: Deathrow I
-        alt: deathrow-I
-        featured: true
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-II.jpg
-        title: Deathrow II
-        alt: deathrow-II
-        featured: true
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-III.jpg
-        title: Deathrow III
-        alt: deathrow-III
-        featured: true
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-IV.jpg
-        title: Deathrow IV
-        alt: deathrow-IV
-        featured: true
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-V.jpg
-        title: Deathrow V
-        alt: deathrow-V
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-VI.jpg
-        title: Deathrow VI
-        alt: deathrow-VI
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-VII.jpg
-        title: Deathrow VII
-        alt: deathrow-VII
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-VIII.jpg
-        title: Deathrow VIII
-        alt: deathrow-VIII
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-IX.jpg
-        title: Deathrow IX
-        alt: deathrow-IX
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-X.jpg
-        title: Deathrow X
-        alt: deathrow-X
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-XI.jpg
-        title: Deathrow XI
-        alt: deathrow-XI
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-XII.jpg
-        title: Deathrow XII
-        alt: deathrow-XII
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-XIII.jpg
-        title: Deathrow XIII
-        alt: deathrow-XIII
-        featured: false
-        description: This is a very cool image
-      - image: /img/paperwork-deathrow-XIV.jpg
-        title: Deathrow XIV
-        alt: deathrow-XIV
-        featured: false
-        description: This is a very cool image
   - name: Portraits
     slug: portraits
     images:
-      - image: /img/portraits-elev-mihail.jpg
-        title: Elev Mihail
-        alt: elev-mihail
-        featured: true
-        description: This is a very cool image
       - image: /img/portraits-freedom-fighter.jpg
         title: Freedom Fighter
         alt: freedom-fighter
+        featured: true
+        description: This is a very cool image
+      - image: /img/portraits-elev-mihail.jpg
+        title: Elev Mihail
+        alt: elev-mihail
         featured: true
         description: This is a very cool image
       - image: /img/portraits-in-search-of-time.jpg
@@ -340,6 +214,132 @@ categories:
       - image: /img/still-life-xyz.jpg
         title: XYZ
         alt: xyz
+        featured: false
+        description: This is a very cool image
+  - name: Fiction
+    slug: fiction
+    images:
+      - image: /img/fiction-adoration.jpg
+        title: Adoration
+        alt: adoration
+        featured: true
+        description: This is a very cool image
+      - image: /img/fiction-arrival-of-the-invader.jpg
+        title: Arrival of the Invader
+        alt: arrival-of-the-invader
+        featured: true
+        description: This is a very cool image
+      - image: /img/fiction-death-of-galatea.jpg
+        title: Death of Galatea
+        alt: death of galatea
+        featured: true
+        description: This is extra good
+      - image: /img/fiction-distance.jpg
+        title: Distance
+        alt: distance
+        featured: true
+        description: This is extra good
+      - image: /img/fiction-galatea-I.jpg
+        title: Galatea I
+        alt: galatea I
+        featured: false
+        description: This is extra good
+      - image: /img/fiction-galatea-II.jpg
+        title: Galatea II
+        alt: galatea II
+        featured: false
+        description: This is extra good
+      - image: /img/fiction-galatea-III.jpg
+        title: Galatea III
+        alt: galatea III
+        featured: false
+        description: This is extra good
+      - image: /img/fiction-galatea-IV.jpg
+        title: Galatea IV
+        alt: galatea IV
+        featured: false
+        description: This is extra good
+      - image: /img/fiction-omiscient.jpg
+        title: Omiscient
+        alt: omiscient
+        featured: false
+        description: This is extra good
+      - image: /img/fiction-paradoxx.jpg
+        title: Paradoxx
+        alt: paradoxx
+        featured: false
+        description: This is extra good
+  - name: Paperwork
+    slug: paperwork
+    images:
+      - image: /img/paperwork-deathrow-I.jpg
+        title: Deathrow I
+        alt: deathrow-I
+        featured: true
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-II.jpg
+        title: Deathrow II
+        alt: deathrow-II
+        featured: true
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-III.jpg
+        title: Deathrow III
+        alt: deathrow-III
+        featured: true
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-IV.jpg
+        title: Deathrow IV
+        alt: deathrow-IV
+        featured: true
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-V.jpg
+        title: Deathrow V
+        alt: deathrow-V
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-VI.jpg
+        title: Deathrow VI
+        alt: deathrow-VI
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-VII.jpg
+        title: Deathrow VII
+        alt: deathrow-VII
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-VIII.jpg
+        title: Deathrow VIII
+        alt: deathrow-VIII
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-IX.jpg
+        title: Deathrow IX
+        alt: deathrow-IX
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-X.jpg
+        title: Deathrow X
+        alt: deathrow-X
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-XI.jpg
+        title: Deathrow XI
+        alt: deathrow-XI
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-XII.jpg
+        title: Deathrow XII
+        alt: deathrow-XII
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-XIII.jpg
+        title: Deathrow XIII
+        alt: deathrow-XIII
+        featured: false
+        description: This is a very cool image
+      - image: /img/paperwork-deathrow-XIV.jpg
+        title: Deathrow XIV
+        alt: deathrow-XIV
         featured: false
         description: This is a very cool image
 ---
