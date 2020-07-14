@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import { sortBy } from "lodash";
 
 import Layout from "../components/Layout";
 import Category from "../components/Category";
@@ -10,7 +11,7 @@ export const IndexPageTemplate = ({ categories }) => (
     <section className='p-strip'>
       <div className='row'>
         {categories.map((category, i) => (
-          <Category category={category} key={i} />
+          <Category category={category.node.frontmatter} key={i} />
         ))}
       </div>
     </section>
@@ -22,11 +23,16 @@ IndexPageTemplate.propTypes = {
 };
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
+  // Sort categories by the specified position
+  const categories = sortBy(data.allMarkdownRemark.edges, [
+    function (el) {
+      return el.node.frontmatter.position;
+    },
+  ]);
 
   return (
     <Layout>
-      <IndexPageTemplate categories={frontmatter.categories} />
+      <IndexPageTemplate categories={categories} />
     </Layout>
   );
 };
@@ -42,23 +48,27 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        categories {
-          name
-          slug
-          images {
-            alt
-            featured
-            image {
-              childImageSharp {
-                fluid(maxWidth: 350, quality: 50) {
-                  ...GatsbyImageSharpFluid
+  query CategoriesForIndexPage {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "category-page" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            slug
+            position
+            images {
+              featured
+              alt
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 370, quality: 50) {
+                    ...GatsbyImageSharpFluid
+                  }
                 }
               }
             }
+            title
           }
         }
       }

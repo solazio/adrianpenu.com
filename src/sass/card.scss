@@ -5,6 +5,36 @@
     padding: 0.5rem 1rem;
   }
 
+  .p-card--highlighted {
+    box-shadow: 0 1px 5px 1px rgba(17, 17, 17, 0.2);
+    margin-bottom: 1rem;
+
+    .p-card__image {
+      position: relative;
+
+      .p-card__info {
+        background-color: $color-dark;
+        bottom: 0;
+        color: $color-light;
+        opacity: 0.7;
+        overflow: auto;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        padding: 0.5rem;
+
+        .u-left {
+          float: left;
+        }
+
+        .u-right {
+          float: right;
+          font-size: small;
+        }
+      }
+    }
+  }
+
   .p-card--expo {
     border: 1px solid darken($color-background, 10%);
     background-color: lighten($color-background, 5%);

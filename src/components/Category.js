@@ -5,9 +5,9 @@ import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
 const Category = ({ category }) => (
   <div className='col-4 col-medium-3'>
-    <Link to={`/${category.slug}`}>
+    <Link to={`/work/${category.slug}`}>
       <div className='p-card--category'>
-        <div className='p-card--category__title'>{category.name}</div>
+        <div className='p-card--category__title'>{category.title}</div>
         <ul className='p-card--category__list'>
           {category.images.map((el, i) => {
             if (i === 0 && el.featured) {

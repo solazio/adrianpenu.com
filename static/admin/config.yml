@@ -13,6 +13,42 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - label: "categories",
+    name: "Categories",
+    file: "src/pages/categories/categories.md",
+    widget: "list",
+    fields:
+      - { label: "Category", name: "category", widget: "string" }
+  - name: "paintings"
+    label: "Paintings"
+    folder: "src/pages/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "category",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - {
+          name: "images",
+          label: "Images",
+          widget: "list",
+          fields:
+            - { label: "Title", name: "title", widget: "string" }
+            - { label: "Alt", name: "alt", widget: "string" }
+            - { label: "Featured", name: "featured", widget: "boolean" default: false }
+            - {
+                label: "Description",
+                name: "description",
+                widget: "text",
+              }
+            - { label: "Image", name: "image", widget: "image" }
+        }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
