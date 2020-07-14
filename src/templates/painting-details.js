@@ -1,18 +1,53 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { find } from "lodash";
 
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 
-export const PaintingTemplate = ({ image, alt, title, helmet }) => {
+export const PaintingTemplate = ({ painting, helmet }) => {
   return (
     <section className='p-strip'>
       {helmet || ""}
-      <div className='u-fixed-width'>
-        <PreviewCompatibleImage imageInfo={image} alt={alt} />
+      <div className='row'>
+        <div className='col-6'>
+          <PreviewCompatibleImage
+            imageInfo={painting.image}
+            alt={painting.alt}
+          />
+        </div>
+        <div className='col-5 col-start-large-8'>
+          <div className='p-card--details'>
+            <div className='p-card__header'>
+              <h1 className='p-heading--3'>{painting.title}</h1>
+              <p>{painting.description}</p>
+            </div>
+            <div className='p-card__details'>
+              <table className='p-table--details'>
+                <tbody>
+                  <tr>
+                    <th>Technique:</th>
+                    <td>{painting.type}</td>
+                  </tr>
+                  <tr>
+                    <th>Dimensions:</th>
+                    <td>{painting.dimensions}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className='p-card__buy-now'>
+              <p>Interested in acquiring this artwork?</p>
+              <Link
+                className='p-button--neutral u-no-margin--bottom'
+                to='/contact'>
+                Get in touch
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
@@ -20,8 +55,6 @@ export const PaintingTemplate = ({ image, alt, title, helmet }) => {
 
 PaintingTemplate.propTypes = {
   image: PropTypes.object,
-  description: PropTypes.string,
-  title: PropTypes.string,
   helmet: PropTypes.object,
 };
 
@@ -33,15 +66,13 @@ const Painting = ({ data, pageContext }) => {
   return (
     <Layout>
       <PaintingTemplate
-        image={painting}
-        description={frontmatter.description}
+        painting={painting}
         helmet={
           <Helmet titleTemplate='%s | Work'>
-            <title>{`${frontmatter.title}`}</title>
-            <meta name='description' />
+            <title>{painting.title}</title>
+            <meta name='description' content={painting.description} />
           </Helmet>
         }
-        title={frontmatter.title}
       />
     </Layout>
   );
@@ -63,11 +94,12 @@ export const pageQuery = graphql`
           title
           alt
           description
-          size
+          dimensions
           slug
+          type
           image {
             childImageSharp {
-              fluid(maxWidth: 370, quality: 50) {
+              fluid(maxWidth: 650, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }

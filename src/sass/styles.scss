@@ -10,6 +10,8 @@
 @include vf-u-layout;
 @include vf-u-hide;
 @include vf-u-align;
+@include vf-u-margin-collapse;
+@include vf-u-padding-collapse;
 
 // color variables
 $color-primary: #1555a8;

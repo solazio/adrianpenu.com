@@ -1,90 +1,37 @@
 @mixin table {
-  .p-table__container {
-    .p-table__title {
-      display: flex;
-      font-weight: 700;
-      padding-left: $spv-inner--medium;
-      padding-bottom: $spv-inner--medium;
+  table.p-table--details {
+    tbody {
+      font-size: small;
+    }
 
-      .p-table__title--image {
-        display: flex;
-        align-items: center;
-      }
+    tr {
+      border: none;
 
-      .p-table__title--text {
-        // color to match the FA logo color
-        color: #011e41;
-        margin-bottom: 6px;
-        margin-left: $spv-inner--medium;
+      &:first-child {
+        td:first-child {
+          width: 30%;
+        }
+        td:nth-child(2) {
+          width: 70%;
+        }
       }
     }
 
-    table {
-      thead {
-        background-color: $color-light;
+    th:first-child {
+      color: $color-mid-dark;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
 
-        tr {
-          border-bottom: none;
+    th,
+    td {
+      padding: 0;
+      vertical-align: middle;
+      text-align: left;
 
-          th {
-            font-weight: bold;
-
-            .large-screen {
-              display: block;
-            }
-
-            .small-screen {
-              display: none;
-            }
-
-            @media screen and(max-width: $breakpoint-medium) {
-              .large-screen {
-                display: none;
-              }
-
-              .small-screen {
-                display: block;
-              }
-            }
-          }
-        }
-      }
-
-      tbody {
-        font-size: 0.9rem;
-      }
-
-      th,
-      td {
-        padding: $spv-inner--large $spv-inner--medium;
-        vertical-align: middle;
-        text-align: center;
-
-        @media screen and(max-width: $breakpoint-small) {
-          padding: $spv-inner--small 0;
-        }
-      }
-
-      .p-table__club {
-        text-align: left;
-        width: 45%;
-
-        @media screen and(min-width: $breakpoint-small) and(max-width:$breakpoint-medium) {
-          width: 35%;
-        }
-
-        @media screen and(max-width: $breakpoint-small) {
-          width: 30%;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          padding-left: $spv-inner--x-small;
-          padding-right: $spv-inner--x-small;
-        }
-      }
-
-      .p-table__highlighted {
-        background-color: lighten($color-secondary, 25%);
+      @media screen and(max-width: $breakpoint-small) {
+        padding: $spv-inner--small 0;
       }
     }
   }
