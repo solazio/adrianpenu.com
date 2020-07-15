@@ -100,7 +100,9 @@ textarea,
 }
 
 .p-social-share {
-  height: 32px;
+  // height: 32px;
+  display: flex;
+  align-items: center;
 
   @media screen and(max-width: $breakpoint-medium) {
     margin-block-start: 1rem;
@@ -114,5 +116,9 @@ textarea,
     &:not(:last-child) {
       margin-inline-end: 0.5rem;
     }
+  }
+
+  .p-icon--share {
+    margin-inline-end: 0.5rem;
   }
 }

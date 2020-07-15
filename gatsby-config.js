@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Adrian Penu - Art Studio",
     description: "Art by Adrian Penu",
-    url: "https://adrianpenu.netlify.app",
+    url: "https://adrianpenu.com",
   },
   plugins: [
     "gatsby-plugin-react-helmet",

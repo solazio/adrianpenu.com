@@ -19,10 +19,10 @@ const Footer = class extends React.Component {
             </p>
           </div>
           <div className='col-4 p-footer--right'>
-            <a title='facebook' href='https://www.facebook.com/adrianpenuart'>
+            <a title='Follow me on Facebook' href='https://www.facebook.com/adrianpenuart'>
               <i className='p-icon--facebook'></i>
             </a>
-            <a title='instagram' href='https://www.instagram.com/adpenu/'>
+            <a title='Follow me on Instagram' href='https://www.instagram.com/adpenu/'>
               <i className='p-icon--instagram'></i>
             </a>
           </div>
