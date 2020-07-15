@@ -25,18 +25,20 @@ export const PaintingTemplate = ({ painting, helmet }) => {
               <p>{painting.description}</p>
             </div>
             <div className='p-card__details'>
-              <table className='p-table--details'>
-                <tbody>
-                  <tr>
-                    <th>Technique:</th>
-                    <td>{painting.type}</td>
-                  </tr>
-                  <tr>
-                    <th>Dimensions:</th>
-                    <td>{painting.dimensions}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <ul className='p-list--small'>
+                <li className='p-list__item'>{painting.type}</li>
+                <li className='p-list__item'>{painting.dimensions}</li>
+                <li className='p-list__item p-heading--3 u-no-margin--bottom'>
+                  {painting.price}
+                </li>
+                {painting.price[0] === "£" ? (
+                  <li className='p-list__item'>
+                    Free worldwide shipping and returns
+                  </li>
+                ) : (
+                  ""
+                )}
+              </ul>
             </div>
             <div className='p-card__buy-now'>
               <p>Interested in acquiring this artwork?</p>
@@ -97,6 +99,7 @@ export const pageQuery = graphql`
           dimensions
           slug
           type
+          price
           image {
             childImageSharp {
               fluid(maxWidth: 650, quality: 90) {

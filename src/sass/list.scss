@@ -1,0 +1,12 @@
+@mixin list {
+  .p-list--small {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7rem;
+    list-style: none;
+
+    .p-list__item:nth-child(3) {
+      padding-block-start: 1.5rem;
+    }
+  }
+}
