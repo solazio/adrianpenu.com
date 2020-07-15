@@ -36,45 +36,40 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach((edge) => {
       const id = edge.node.id;
-        createPage({
-          path: edge.node.fields.slug,
-          tags: edge.node.frontmatter.tags,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-          ),
-          // additional data can be passed via context
-          context: {
-            id,
-          },
-        });
+      createPage({
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      });
     });
 
     // Painting pages
     posts.forEach((post) => {
       const category = post.node.fields.slug;
       const id = post.node.id;
-      // if (_.get(el, `node.frontmatter.images`)) {
-      //   paintings = paintings.concat(edge.node.frontmatter.images.slug);
-      // }
       const images = post.node.frontmatter.images;
       if (images) {
-        images.forEach(el => {
+        images.forEach((el) => {
+          const pagePath = `${category}${el.slug}`;
           const paintingSlug = el.slug;
           createPage({
-            path: `${category}${el.slug}`,
-            component: path.resolve(
-              `src/templates/painting-details.js`
-            ),
+            path: pagePath,
+            component: path.resolve(`src/templates/painting-details.js`),
             context: {
               id,
               paintingSlug,
+              pagePath,
             },
           });
-        })
+        });
       }
-      // console.log(el.node.frontmatter.images);
     });
-    // console.log(paintings);
 
     // Tag pages:
     let tags = [];

@@ -6,8 +6,9 @@ import { find } from "lodash";
 
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import SocialShare from "../components/SocialShare";
 
-export const PaintingTemplate = ({ painting, helmet }) => {
+export const PaintingTemplate = ({ painting, helmet, siteMetadata }) => {
   return (
     <section className='p-strip'>
       {helmet || ""}
@@ -42,11 +43,26 @@ export const PaintingTemplate = ({ painting, helmet }) => {
             </div>
             <div className='p-card__buy-now'>
               <p>Interested in acquiring this artwork?</p>
-              <Link
-                className='p-button--neutral u-no-margin--bottom'
-                to='/contact'>
-                Get in touch
-              </Link>
+              <div className='row'>
+                <div className='col-3'>
+                  <Link
+                    className='p-button--neutral u-no-margin--bottom'
+                    to='/contact'>
+                    {" "}
+                    Get in touch{" "}
+                  </Link>{" "}
+                </div>
+                <div className='col-2'>
+                  <SocialShare
+                    socialConfig={{
+                      config: {
+                        url: `${siteMetadata.url}${siteMetadata.path}`,
+                        title: `${painting.title}`,
+                      },
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,11 +73,15 @@ export const PaintingTemplate = ({ painting, helmet }) => {
 
 PaintingTemplate.propTypes = {
   image: PropTypes.object,
+  siteMetadata: PropTypes.object,
   helmet: PropTypes.object,
 };
 
 const Painting = ({ data, pageContext }) => {
   const { frontmatter } = data.markdownRemark;
+  let { siteMetadata } = data.site;
+  siteMetadata.path = pageContext.pagePath;
+
   // find the painting for this page
   const painting = find(frontmatter.images, { slug: pageContext.paintingSlug });
 
@@ -69,8 +89,10 @@ const Painting = ({ data, pageContext }) => {
     <Layout>
       <PaintingTemplate
         painting={painting}
+        siteMetadata={siteMetadata}
         helmet={
           <Helmet titleTemplate='%s | Work'>
+            <meta charSet='utf-8' />
             <title>{painting.title}</title>
             <meta name='description' content={painting.description} />
           </Helmet>
@@ -82,6 +104,7 @@ const Painting = ({ data, pageContext }) => {
 
 Painting.propTypes = {
   data: PropTypes.shape({
+    site: PropTypes.object,
     markdownRemark: PropTypes.object,
   }),
 };
@@ -90,6 +113,11 @@ export default Painting;
 
 export const pageQuery = graphql`
   query PaintingByID($id: String!) {
+    site {
+      siteMetadata {
+        url
+      }
+    }
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         images {

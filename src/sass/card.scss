@@ -4,7 +4,6 @@
     padding: 0.5rem 1rem;
   }
 
-
   .p-card--details {
     background-color: lighten($color-background, 5%);
     padding: 1rem;
@@ -24,6 +23,16 @@
 
     .p-card__buy-now {
       margin-block-start: 1.5rem;
+
+      .col-2 {
+        align-items: center;
+        justify-content: flex-end;
+        display: flex;
+
+        @media screen and(max-width: $breakpoint-medium) {
+          justify-content: center;
+        }
+      }
     }
   }
 
