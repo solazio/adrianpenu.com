@@ -11,12 +11,9 @@ export const CategoryTemplate = ({ images, slug, helmet }) => {
     <Link to={`/work/${slug}/${el.slug}`} key={i}>
       <div className='p-card--highlighted' title={el.title}>
         <div className='p-card__image'>
-          <PreviewCompatibleImage
-            imageInfo={el.image}
-            alt={el.alt}
-          />
+          <PreviewCompatibleImage imageInfo={el.image} alt={el.alt} />
           <div className='p-card__info'>
-            <div className='u-right'>{el.size}</div>
+            <div className='u-right'>{el.dimensions}</div>
             <div className='u-left'>{el.title}</div>
           </div>
         </div>
@@ -111,7 +108,7 @@ export const pageQuery = graphql`
           title
           alt
           description
-          size
+          dimensions
           slug
           image {
             childImageSharp {

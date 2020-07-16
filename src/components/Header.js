@@ -50,6 +50,17 @@ const Header = ({ path }) => (
           </li> */}
           <li
             className={
+              path === "/blog"
+                ? "p-navigation__item is-selected"
+                : "p-navigation__item"
+            }
+            role='menuitem'>
+            <Link className='p-navigation__link' to='/blog'>
+              Blog
+            </Link>
+          </li>
+          <li
+            className={
               path === "/about"
                 ? "p-navigation__item is-selected"
                 : "p-navigation__item"

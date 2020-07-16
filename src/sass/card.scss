@@ -1,4 +1,14 @@
 @mixin card {
+  .p-card--blog {
+    @extend %vf-card;
+
+    background-color: lighten($color-background, 5%);
+
+    &.is-featured {
+      background-color: lighten($color-background, 10%);
+      border-left: 3px solid $color-secondary;
+    }
+  }
   .p-card--form {
     background-color: lighten($color-background, 5%);
     padding: 0.5rem 1rem;

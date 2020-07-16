@@ -48,7 +48,7 @@ export default class Index extends React.Component {
                   data-netlify='true'
                   data-netlify-honeypot='bot-field'
                   onSubmit={this.handleSubmit}>
-                  <p class='required-legend u-align-text--right'>Required</p>
+                  <p className='required-legend u-align-text--right'>Required</p>
                   {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                   <label className='u-hide' htmlFor={"form-name"}>
                     Not real

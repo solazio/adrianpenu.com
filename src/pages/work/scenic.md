@@ -12,6 +12,7 @@ images:
     featured: true
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-empire.jpg
     title: Empire
     alt: empire
@@ -19,6 +20,7 @@ images:
     featured: true
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-leif.jpg
     title: Leif
     alt: leif
@@ -26,6 +28,7 @@ images:
     featured: true
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-rainbow-island.jpg
     title: Rainbow Island
     alt: rainbow-island
@@ -33,6 +36,7 @@ images:
     featured: true
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-random-precision.jpg
     title: Random Precision
     alt: random-precision
@@ -40,6 +44,7 @@ images:
     featured: true
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-skyscape.jpg
     title: Skyscape
     alt: skyscape
@@ -47,6 +52,7 @@ images:
     featured: false
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-supernova-I.jpg
     title: Supernova I
     alt: supernova-I
@@ -54,6 +60,7 @@ images:
     featured: false
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-supernova-II.jpg
     title: Supernova II
     alt: supernova-II
@@ -61,6 +68,7 @@ images:
     featured: false
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-supernova-III.jpg
     title: Supernova III
     alt: supernova-III
@@ -68,6 +76,7 @@ images:
     featured: false
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
   - image: /img/scenic-vertical-supremo.jpg
     title: Vertical Supremo
     alt: vertical-supremo
@@ -75,4 +84,5 @@ images:
     featured: false
     description: This is a very cool image
     dimensions: 360 x 480 mm
+    price:
 ---

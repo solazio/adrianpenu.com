@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Adrian Penu - Art Studio",
     description: "Art by Adrian Penu",
-    url: "https://adrianpenu.com",
+    url: "https://adrianpenu.netlify.app",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -20,13 +20,6 @@ module.exports = {
       options: {
         path: `${__dirname}/src/pages`,
         name: "pages",
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        path: `${__dirname}/src/img`,
-        name: "images",
       },
     },
     "gatsby-plugin-sharp",

@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 import {
   FacebookShareButton,
   FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon
 } from "react-share";
 
-const SocialShare = ({ socialConfig, tags }) => (
+const SocialShare = ({ socialConfig }) => (
   <div className='p-social-share'>
     <i title='Share this page' className='p-icon--share'></i>
     <FacebookShareButton
@@ -15,6 +19,20 @@ const SocialShare = ({ socialConfig, tags }) => (
       className='button is-outlined is-rounded facebook'>
       <FacebookIcon size={32} round={true} />
     </FacebookShareButton>
+    <TwitterShareButton
+      url={socialConfig.config.url}
+      quote={socialConfig.config.title}
+      title='Share on Twitter'
+      className='button is-outlined is-rounded facebook'>
+      <TwitterIcon size={32} round={true} />
+    </TwitterShareButton>
+    <LinkedinShareButton
+      url={socialConfig.config.url}
+      quote={socialConfig.config.title}
+      title='Share on LinkedIn'
+      className='button is-outlined is-rounded facebook'>
+      <LinkedinIcon size={32} round={true} />
+    </LinkedinShareButton>
   </div>
 );
 
@@ -25,7 +43,6 @@ SocialShare.propTypes = {
       title: PropTypes.string.isRequired,
     }),
   }).isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string),
 };
 
 SocialShare.defaultProps = {

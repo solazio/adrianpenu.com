@@ -32,7 +32,7 @@ export const PaintingTemplate = ({ painting, helmet, siteMetadata }) => {
                 <li className='p-list__item p-heading--3 u-no-margin--bottom'>
                   {painting.price}
                 </li>
-                {painting.price[0] === "£" ? (
+                {painting.price && painting.price[0] === "£" ? (
                   <li className='p-list__item'>
                     Free worldwide shipping and returns
                   </li>
@@ -95,6 +95,18 @@ const Painting = ({ data, pageContext }) => {
             <meta charSet='utf-8' />
             <title>{painting.title}</title>
             <meta name='description' content={painting.description} />
+            <meta
+              property='og:title'
+              content={`${painting.title} | Adrian Penu`}
+            />
+            <meta
+              property='og:url'
+              content={`${siteMetadata.url}${siteMetadata.path}`}
+            />
+            <meta
+              property='og:image'
+              content={painting.image.childImageSharp.fluid.src}
+            />
           </Helmet>
         }
       />

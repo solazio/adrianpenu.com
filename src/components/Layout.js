@@ -20,34 +20,34 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href={`${withPrefix("/")}img/apple-touch-icon.png`}
+          href={`${withPrefix("/")}img/logo.svg`}
         />
         <link
           rel='icon'
-          type='image/png'
-          href={`${withPrefix("/")}img/favicon-32x32.png`}
+          type='image/svg+xml'
+          href={`${withPrefix("/")}img/logo.svg`}
           sizes='32x32'
         />
         <link
           rel='icon'
-          type='image/png'
-          href={`${withPrefix("/")}img/favicon-16x16.png`}
+          type='image/svg+xml'
+          href={`${withPrefix("/")}img/logo.svg`}
           sizes='16x16'
         />
 
         <link
           rel='mask-icon'
-          href={`${withPrefix("/")}img/safari-pinned-tab.svg`}
-          color='#ff4400'
+          href={`${withPrefix("/")}img/logo.svg`}
         />
-        <meta name='theme-color' content='#fff' />
+        <meta name='theme-color' content='#c9c1a9' />
 
-        <meta property='og:type' content='business.business' />
+        <meta property='og:type' content='painter' />
         <meta property='og:title' content={title} />
         <meta property='og:url' content='/' />
+        <meta property="og:site_name" content="Adrian Penu"></meta>
         <meta
           property='og:image'
-          content={`${withPrefix("/")}img/og-image.jpg`}
+          content={`${withPrefix("/")}img/adrian.jpg`}
         />
       </Helmet>
       <Header path={globalHistory.location.pathname} />

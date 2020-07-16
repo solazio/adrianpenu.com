@@ -1,38 +1,25 @@
-import React from 'react'
+import React from "react";
 
-import Layout from '../../components/Layout'
-import BlogRoll from '../../components/BlogRoll'
+import Layout from "../../components/Layout";
+import BlogRoll from "../../components/BlogRoll";
 
 export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
+        <section
+          className='p-strip--blog'
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-              backgroundColor: '#f40',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            Latest Stories
-          </h1>
-        </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <BlogRoll />
-            </div>
+            backgroundImage: `linear-gradient(to top, rgba(201, 193, 169, 0.3) 0%, rgba(201, 193, 169, 0.3) 100%), url('/img/fiction-galatea-IV.jpg')`,
+          }}>
+          <div className='u-fixed-width'>
+            <h1>Latest stories</h1>
           </div>
         </section>
+        <section className='p-strip'>
+            <BlogRoll />
+        </section>
       </Layout>
-    )
+    );
   }
 }
