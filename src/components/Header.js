@@ -6,7 +6,9 @@ const Header = ({ path }) => (
   <header id='navigation' className='p-navigation'>
     <div className='p-navigation__row'>
       <div className='p-navigation__banner'>
-        <div className='p-navigation__logo'>Adrian Penu</div>
+        <div className='p-navigation__logo'>
+          <Link to='/'>Adrian Penu</Link>
+        </div>
         <a
           href='#navigation'
           className='p-navigation__toggle--open'

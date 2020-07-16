@@ -19,9 +19,9 @@ export const BlogPostTemplate = ({
     <section className='p-strip'>
       {helmet || ""}
       <div className='u-fixed-width'>
-        <h1 className='p-heading--2'>{title}</h1>
+        <h1>{title}</h1>
         <p>{description}</p>
-        <PostContent content={content} />
+        <PostContent className='p-blog-content' content={content} />
       </div>
     </section>
   );

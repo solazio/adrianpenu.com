@@ -1,37 +1,5 @@
 @mixin link {
-  a {
-    color: $color-dark;
-    text-decoration: none;
-    padding-bottom: 2px;
-    position: relative;
-
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: $color-secondary;
-      content: "";
-      opacity: 0.25;
-      transform: scaleX(0.8);
-      transition-property: transform, opacity;
-      transition-duration: 0.3s;
-    }
-    &:hover {
-      text-decoration: none;
-
-      &::before {
-        transform: scaleX(1);
-        opacity: 1;
-      }
-    }
-
-    &.is-dark {
-      color: $color-light;
-    }
-  }
-
+  .p-blog-content a,
   a.p-link {
     color: $color-dark;
     text-decoration: none;
@@ -70,5 +38,10 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  .p-navigation__logo a {
+    color: $color-dark;
+    text-decoration: none;
   }
 }
