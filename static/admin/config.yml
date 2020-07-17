@@ -39,7 +39,7 @@ collections:
 
   - name: "paintings"
     label: "Paintings"
-    folder: "src/pages/categories"
+    folder: "src/pages/work"
     create: true
     slug: "{{slug}}"
     fields:
