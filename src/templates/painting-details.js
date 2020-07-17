@@ -100,13 +100,27 @@ const Painting = ({ data, pageContext }) => {
               content={`${painting.title} | Adrian Penu`}
             />
             <meta
+              property='twitter:title'
+              content={`${painting.title} | Adrian Penu`}
+            />
+            <meta property='og:description' content={painting.description} />
+            <meta
+              property='twitter:description'
+              content={painting.description}
+            />
+            <meta
               property='og:url'
               content={`${siteMetadata.url}${siteMetadata.path}`}
             />
             <meta
               property='og:image'
-              content={painting.image.childImageSharp.fluid.src}
+              content={`${siteMetadata.url}${painting.image.childImageSharp.fluid.src}`}
             />
+            <meta
+              name='twitter:image'
+              content={`${siteMetadata.url}${painting.image.childImageSharp.fluid.src}`}
+            />
+            <meta name='twitter:card' content='summary_large_image' />
           </Helmet>
         }
       />

@@ -11,7 +11,7 @@ import {
 
 const SocialShare = ({ socialConfig }) => (
   <div className='p-social-share'>
-    <i title='Share this page' className='p-icon--share'></i>
+    <i className='p-icon--share'></i>
     <FacebookShareButton
       url={socialConfig.config.url}
       quote={socialConfig.config.title}
