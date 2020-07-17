@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../sass/styles.scss";
 import useSiteMetadata from "./SiteMetadata";
-import { withPrefix } from "gatsby";
 
 const TemplateWrapper = ({ children }) => {
   const { title, description, url } = useSiteMetadata();
@@ -20,35 +19,34 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href={`${withPrefix("/")}img/logo.svg`}
+          href={`${url}/img/logo.svg`}
         />
         <link
           rel='icon'
           type='image/svg+xml'
-          href={`${withPrefix("/")}img/logo.svg`}
+          href={`${url}/img/logo.svg`}
           sizes='32x32'
         />
         <link
           rel='icon'
           type='image/svg+xml'
-          href={`${withPrefix("/")}img/logo.svg`}
+          href={`${url}/img/logo.svg`}
           sizes='16x16'
         />
 
-        <link
-          rel='mask-icon'
-          href={`${withPrefix("/")}img/logo.svg`}
-        />
+        <link rel='mask-icon' href={`${url}/img/logo.svg`} />
         <meta name='theme-color' content='#c9c1a9' />
-
-        <meta property='og:type' content='painter' />
+        {/* To DO add fb:app_id https://stackoverflow.com/questions/8845082/getting-fb-app-id-from-a-fb-page*/}
+        <meta property='fb:app_id' content='add_fb_app_id' />
+        <meta property='og:type' content='profile' />
         <meta property='og:title' content={title} />
-        <meta property='og:url' content='/' />
-        <meta property="og:site_name" content="Adrian Penu"></meta>
-        <meta
-          property='og:image'
-          content={`${withPrefix("/")}img/adrian.jpg`}
-        />
+        <meta property='twitter:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='twitter:description' content={description} />
+        <meta property='og:url' content={url} />
+        <meta property='og:site_name' content='Adrian Penu'></meta>
+        <meta property='og:image' content={`${url}/img/adrian.jpg`} />
+        <meta property='twitter:image' content={`${url}/img/adrian.jpg`} />
       </Helmet>
       <Header path={globalHistory.location.pathname} />
       <div>{children}</div>

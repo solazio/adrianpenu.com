@@ -52,7 +52,7 @@ const Header = ({ path }) => (
           </li> */}
           <li
             className={
-              path === "/blog"
+              path === "/blog" || path === "/blog/"
                 ? "p-navigation__item is-selected"
                 : "p-navigation__item"
             }
@@ -63,7 +63,7 @@ const Header = ({ path }) => (
           </li>
           <li
             className={
-              path === "/about"
+              path === "/about" || path === "/about/"
                 ? "p-navigation__item is-selected"
                 : "p-navigation__item"
             }
@@ -74,7 +74,7 @@ const Header = ({ path }) => (
           </li>
           <li
             className={
-              path === "/contact"
+              path === "/contact" || path === "/contact/"
                 ? "p-navigation__item is-selected"
                 : "p-navigation__item"
             }
