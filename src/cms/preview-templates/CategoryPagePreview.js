@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { CategoryTemplate } from "../../templates/category-page";
 
 const IndexPagePreview = ({ entry, getAsset }) => {
-  const data = entry.getIn(["data"]).toJS();
+  console.log(entry.getIn(["data"]));
+  const data = entry.getIn(["data"]);
 
   if (data) {
     return (
