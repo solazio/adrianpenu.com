@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
+import { sortBy } from "lodash";
 
 import Layout from "../components/Layout";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -70,12 +71,17 @@ CategoryTemplate.propTypes = {
 
 const Category = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  // Sort images by the specified position
+  const images = sortBy(frontmatter.images, [
+    function (el) {
+      return el.position;
+    },
+  ]);
 
   return (
     <Layout>
       <CategoryTemplate
-        images={frontmatter.images}
-        description={frontmatter.description}
+        images={images}
         slug={frontmatter.slug}
         helmet={
           <Helmet titleTemplate='%s | Adrian Penu'>
@@ -102,14 +108,13 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        description
         slug
         images {
           title
           alt
-          description
           dimensions
           slug
+          position
           image {
             childImageSharp {
               fluid(maxWidth: 370, quality: 50) {

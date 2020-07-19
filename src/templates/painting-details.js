@@ -23,7 +23,6 @@ export const PaintingTemplate = ({ painting, helmet, siteMetadata }) => {
           <div className='p-card--details'>
             <div className='p-card__header'>
               <h1 className='p-heading--3'>{painting.title}</h1>
-              <p>{painting.description}</p>
             </div>
             <div className='p-card__details'>
               <ul className='p-list--small'>
@@ -149,7 +148,6 @@ export const pageQuery = graphql`
         images {
           title
           alt
-          description
           dimensions
           slug
           type

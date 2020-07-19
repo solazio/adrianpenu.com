@@ -60,6 +60,7 @@ export const pageQuery = graphql`
             images {
               featured
               alt
+              position
               image {
                 childImageSharp {
                   fluid(maxWidth: 370, quality: 50) {
