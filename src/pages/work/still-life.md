@@ -28,7 +28,7 @@ images:
     position: 6
     alt: animal-skull
     slug: animal-skull
-    featured: true
+    featured: false
     type: Oil on linen, 2018
     dimensions: 60 x 60 cm
     price: £600
@@ -91,7 +91,7 @@ images:
     position: 1
     alt: the-dark-side-of-the-room
     slug: the-dark-side-of-the-room
-    featured: false
+    featured: true
     type: Oil on linen, 2018
     dimensions: 160 x 140 cm
     price: £1200

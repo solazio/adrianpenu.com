@@ -19,7 +19,7 @@ images:
     position: 4
     alt: empire
     slug: empire
-    featured: true
+    featured: false
     type:  Oil on canvas, 2020
     dimensions: 150 x 120 cm
     price: £1200
@@ -73,7 +73,7 @@ images:
     position: 1
     alt: supernova-II
     slug: supernova-II
-    featured: false
+    featured: true
     type: Oil on canvas, 2019
     dimensions: 100 x 100 cm
     price: £945
