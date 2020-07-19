@@ -50,7 +50,7 @@ const Header = ({ path }) => (
               News
             </Link>
           </li> */}
-          <li
+          {/* <li
             className={
               path === "/blog" || path === "/blog/"
                 ? "p-navigation__item is-selected"
@@ -60,7 +60,7 @@ const Header = ({ path }) => (
             <Link className='p-navigation__link' to='/blog'>
               Blog
             </Link>
-          </li>
+          </li> */}
           <li
             className={
               path === "/about" || path === "/about/"
