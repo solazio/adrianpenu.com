@@ -2,8 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 
-const PreviewCompatibleImage = ({ imageInfo, immageClass, imageStyle, alt }) => {
-  const { childImageSharp, image } = imageInfo;
+const PreviewCompatibleImage = ({
+  imageInfo,
+  immageClass,
+  imageStyle,
+  alt,
+}) => {
+  const { childImageSharp, image, url } = imageInfo;
 
   if (!!image && !!image.childImageSharp) {
     return (
@@ -30,6 +35,20 @@ const PreviewCompatibleImage = ({ imageInfo, immageClass, imageStyle, alt }) => 
   if (!!image && typeof image === "string")
     return (
       <img className={immageClass} style={imageStyle} src={image} alt={alt} />
+    );
+
+  if (!!url && typeof url === "string")
+    return (
+      <img className={immageClass} style={imageStyle} src={url} alt={alt} />
+    );
+
+  if (!!imageInfo && typeof imageInfo === "string")
+    return (
+      <img
+        className={immageClass}
+        style={imageStyle}
+        src={imageInfo}
+      />
     );
 
   return null;

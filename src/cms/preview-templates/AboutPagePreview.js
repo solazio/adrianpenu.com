@@ -5,13 +5,17 @@ import { AboutPageTemplate } from "../../templates/about-page";
 const AboutPagePreview = ({ entry, widgetFor, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
 
-  return (
-    <AboutPageTemplate
-      title={entry.getIn(["data", "title"])}
-      content={widgetFor("body")}
-      image={getAsset(data.image)}
-    />
-  );
+  if (data) {
+    return (
+      <AboutPageTemplate
+        title={data.title}
+        content={widgetFor("body")}
+        image={getAsset(data.image)}
+      />
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 };
 
 AboutPagePreview.propTypes = {
