@@ -14,7 +14,7 @@ const TemplateWrapper = ({ children }) => {
         <html lang='en' />
         <title>{title}</title>
         <meta name='description' content={description} />
-        <link rel='preconnect' href='https://adrianpenu.netlify.app' />
+        <link rel='preconnect' href={url} />
         <link rel='canonical' href={url} />
 
         <link
