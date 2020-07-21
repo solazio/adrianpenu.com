@@ -21,11 +21,10 @@ $color-background: #c9c1a9; // dark #1c1c1c
 $color-light: #f7f7f7;
 
 // https://fonts.google.com/specimen/Poppins
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,500");
+// @import url("https://fonts.googleapis.com/css?family=Poppins:300,500");
 
 html {
-  font-family: "Poppins", Helvetica, sans-serif;
-  // font-family:  Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 @import "footer";
