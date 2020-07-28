@@ -49,8 +49,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property='twitter:title' content={title} />
         <meta property='twitter:description' content={description} />
         <meta property='twitter:image' content={`${url}/img/adrian.jpg`} />
-        {/* TO DO add twitter user name*/}
-        <meta property='twitter:site' content='@username' />
+        <meta property='twitter:site' content='@adpenu' />
 
         <meta property='fb:app_id' content='add_fb_app_id' />
       </Helmet>
